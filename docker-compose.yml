@@ -1,9 +1,26 @@
-version: '3'
+version: '3.9'
+
+networks:
+ app_network:
+   name: fastnetwork
+   driver: bridge
+
+
 services:
-  
-  web:
-    image: nginx
-
-  database:
-    image: redis
-
+  postman:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    image: postman/newman:latest
+    command:
+      run J_0_collection.json -k
+      -e environment.json
+      -d data.csv 
+      -n 1
+      -r htmlextra
+      --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
+      --reporter-htmlextra-testPaging
+    volumes:
+      - .:/etc/newman
+    networks:
+      - app_network
