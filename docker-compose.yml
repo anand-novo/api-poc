@@ -1,8 +1,4 @@
-version: '3'
-
-app_network:
-   name: fastnetwork
-   driver: bridge
+version: '2'
 
 services:
   postman_newman:
@@ -20,7 +16,5 @@ services:
       --reporter-htmlextra-testPaging
     volumes:
       - .:/etc/newman
-    networks:
-      - app_network
-
+   
 
