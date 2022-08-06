@@ -1,9 +1,8 @@
 version: '3.9'
 
 networks:
- app_network:
-   name: fastnetwork
-   driver: bridge
+  dev-network:
+    external: true
 
 
 services:
@@ -23,4 +22,4 @@ services:
     volumes:
       - .:/etc/newman
     networks:
-      - app_network
+      - dev_network
