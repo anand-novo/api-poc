@@ -1,9 +1,4 @@
-version: '3.9'
-
-networks:
-  dev-network:
-    external: true
-
+version: '3'
 
 services:
   postman_newman:
@@ -23,3 +18,7 @@ services:
       - .:/etc/newman
     networks:
       - dev_network
+
+networks:
+  dev-network:
+    external: true
