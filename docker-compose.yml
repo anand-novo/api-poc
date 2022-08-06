@@ -7,11 +7,11 @@ networks:
 
 
 services:
-  postman:
+  postman_newman:
     build:
       context: . 
       dockerfile: Dockerfile
-    image: postman/newman:latest
+    image: postman_newman:latest
     command:
       run J_0_collection.json -k
       -e environment.json
