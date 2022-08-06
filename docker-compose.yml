@@ -17,8 +17,8 @@ services:
     volumes:
       - .:/etc/newman
     networks:
-      - dev_network
+      - app_network
 
-networks:
-  dev-network:
-    external: true
+app_network:
+   name: fastnetwork
+   driver: bridge
