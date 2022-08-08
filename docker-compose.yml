@@ -27,5 +27,5 @@ services:
       - ./:/etc/newman
  #   networks:
  #     - app_network
- #  
+ 
 
