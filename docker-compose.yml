@@ -1,17 +1,17 @@
 version: '3.9'
 
-networks:
- app_network:
-   name: fastnetwork
-   driver: bridge
+#networks:
+#  app_network: 
+#    name: fastnetwork
+#    driver: bridge
 
 
 services:
-  postman:
+  api-test:
     build:
       context: . 
       dockerfile: Dockerfile
-    image: postman/newman:latest
+    image: api-test-image
     command:
       run J_0_collection.json -k
       -e environment.json
@@ -21,6 +21,8 @@ services:
       --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
       --reporter-htmlextra-testPaging
     volumes:
-      - .:/etc/newman
-    networks:
-      - app_network
+      - ./:/etc/newman
+ #   networks:
+ #     - app_network
+   
+
