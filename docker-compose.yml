@@ -21,8 +21,8 @@ services:
       --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
       --reporter-htmlextra-testPaging
       --reporter-htmlextra-browserTitle "Novo Newman Report" 
-      --reporter-htmlextra-export "API_html_report.html"
-      --reporter-junit-export "API_junit_report.xml"
+      --reporter-htmlextra-export "newman/API_html_report.html"
+      --reporter-junit-export "newman/API_junit_report.xml"
     volumes:
       - ./:/etc/newman
  #   networks:
