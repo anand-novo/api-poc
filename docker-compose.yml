@@ -17,11 +17,12 @@ services:
       -e environment.json
       -d data.csv 
       -n 1
-      -r htmlextra
+      -r cli,junit,htmlextra
       --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
       --reporter-htmlextra-testPaging
       --reporter-htmlextra-browserTitle "Novo Newman Report" 
-      --reporter-htmlextra-export NovoAutomationReport.html
+      --reporter-htmlextra-export "API_html_report.html"
+      --reporter-junit-export "API_junit_report.xml"
     volumes:
       - ./:/etc/newman
  #   networks:
