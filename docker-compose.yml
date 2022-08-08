@@ -1,9 +1,9 @@
 version: '3.9'
 
-networks:
-  app_network: 
-    name: fastnetwork
-    driver: bridge
+#networks:
+#  app_network: 
+#    name: fastnetwork
+#    driver: bridge
 
 
 services:
@@ -21,8 +21,8 @@ services:
       --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
       --reporter-htmlextra-testPaging
     volumes:
-      - /var/lib/jenkins/workspace/automation-test-api:/etc/newman
-    networks:
-      - app_network
+      - ./:/etc/newman
+ #   networks:
+ #     - app_network
    
 
