@@ -20,6 +20,8 @@ services:
       -r htmlextra
       --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
       --reporter-htmlextra-testPaging
+      --reporter-htmlextra-browserTitle "Novo Newman Report" 
+      --reporter-htmlextra-export NovoAutomationReport.html
     volumes:
       - ./:/etc/newman
  #   networks:
