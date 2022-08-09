@@ -1,0 +1,28 @@
+version: '3.9'
+
+#networks:
+#  app_network: 
+#    name: fastnetwork
+#    driver: bridge
+
+
+services:
+  api-test:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    image: api-test-image
+    command:
+      run J_0_collection.json -k
+      -e environment.json
+      -d data.csv 
+      -n 1
+      -r htmlextra
+      --reporter-htmlextra-Title "Regression Suite Report with 1 Users" 
+      --reporter-htmlextra-testPaging
+    volumes:
+      - ./:/etc/newman
+ #   networks:
+ #     - app_network
+   
+
