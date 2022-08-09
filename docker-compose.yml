@@ -29,10 +29,6 @@ services:
  #     - app_network
  
  eco-api-test:
-    build:
-      context: . 
-      dockerfile: Dockerfile
-    image: api-test-image
     command:
       run J_0_collection.json -k
       -e environment.json
