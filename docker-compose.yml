@@ -25,10 +25,12 @@ services:
       --reporter-junit-export "newman/API_Core_junit_report.xml"
     volumes:
       - ./:/etc/newman
- #   networks:
- #     - app_network
- 
- eco-api-test:
+
+  ecosyste-api-test:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    image: api-test-image
     command:
       run J_0_collection.json -k
       -e environment.json
@@ -42,6 +44,7 @@ services:
       --reporter-junit-export "newman/API_ecosystem_junit_report.xml"
     volumes:
       - ./:/etc/newman
+      
  #   networks:
  #     - app_network
 
